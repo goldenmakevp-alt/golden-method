@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Golden Method — Le Guide pour Makeup Artists</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZXJVRZCD9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GZXJVRZCD9');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --gold: #C8922A;
+    --gold-light: #E0B96A;
+    --gold-pale: #F0D898;
+    --brown-deep: #5C1A00;
+    --brown-mid: #7A2E0A;
+    --brown-warm: #8B3A10;
+    --cream: #FBF6F0;
+    --cream-dark: #F0E6D8;
+    --text: #3D1000;
+    --text-light: #6B3020;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(92,26,0,0.97);
+    backdrop-filter: blur(10px);
+    padding: 14px 32px;
+    display: flex; align-items: center; justify-content: center;
+    border-bottom: 1px solid rgba(200,146,42,0.25);
+  }
+  nav img.nav-logo {
+    height: 32px;
+    filter: brightness(1.1);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--brown-deep);
+    padding: 120px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(200,146,42,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold-light); opacity: 0.8;
+    margin-bottom: 20px;
+    animation: fadeUp 0.8s ease forwards; opacity: 0;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 7vw, 72px);
+    font-weight: 500; line-height: 1.1;
+    background: linear-gradient(135deg, #C8922A 0%, #F0D898 45%, #C8922A 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    animation: fadeUp 0.8s ease 0.15s forwards; opacity: 0;
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: 300; font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s ease 0.3s forwards; opacity: 0;
+  }
+
+  .hero-mockup {
+    max-width: 480px; width: 90%;
+    margin: 0 auto 48px;
+    border-radius: 4px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 60px rgba(200,146,42,0.1);
+    animation: fadeUp 0.8s ease 0.45s forwards; opacity: 0;
+  }
+
+  .hero-cta-wrap {
+    animation: fadeUp 0.8s ease 0.6s forwards; opacity: 0;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #C8922A, #E0B96A, #C8922A);
+    background-size: 200% 200%;
+    color: var(--brown-deep);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
+    text-transform: uppercase; text-decoration: none;
+    padding: 18px 48px;
+    border: none; cursor: pointer;
+    transition: all 0.3s ease;
+    animation: shimmer 3s ease infinite;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(200,146,42,0.4);
+  }
+  .hero-price {
+    margin-top: 16px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; font-style: italic;
+    color: var(--gold-light); opacity: 0.7;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    display: flex; align-items: center; gap: 20px;
+    max-width: 300px; margin: 0 auto;
+    padding: 32px 0;
+  }
+  .divider-line { flex: 1; height: 1px; background: rgba(200,146,42,0.25); }
+  .divider-ornament {
+    color: var(--gold); font-size: 14px; opacity: 0.6;
+  }
+
+  /* ─── SECTIONS COMMUNES ─── */
+  section { padding: 80px 24px; }
+  .container { max-width: 700px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 24px; display: block;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 500; line-height: 1.2;
+    color: var(--brown-deep);
+    margin-bottom: 32px;
+  }
+  p {
+    line-height: 1.85; font-size: 15px;
+    color: var(--text-light); margin-bottom: 20px;
+  }
+  p strong {
+    color: var(--text); font-weight: 500;
+  }
+
+  /* ─── PROBLEM SECTION ─── */
+  .section-problem {
+    background: var(--cream-dark);
+  }
+  .problem-statement {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 4vw, 34px);
+    font-weight: 400; line-height: 1.4;
+    color: var(--brown-deep);
+    margin-bottom: 32px;
+    font-style: italic;
+  }
+
+  /* ─── MIRROR / LISTE DOULEURS ─── */
+  .pain-list {
+    list-style: none;
+    margin: 32px 0;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .pain-list li {
+    display: flex; align-items: flex-start; gap: 16px;
+    font-size: 15px; color: var(--text-light);
+    line-height: 1.6;
+  }
+  .pain-list li::before {
+    content: '—';
+    color: var(--gold); flex-shrink: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; margin-top: 1px;
+  }
+  .mirror-question {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 3.5vw, 28px);
+    font-style: italic; font-weight: 400;
+    color: var(--brown-deep);
+    border-left: 2px solid var(--gold);
+    padding-left: 24px;
+    margin-top: 40px; line-height: 1.5;
+  }
+
+  /* ─── STORY SECTION ─── */
+  .section-story { background: var(--brown-deep); }
+  .section-story h2 { color: var(--gold-pale); }
+  .section-story p { color: rgba(240,216,152,0.75); }
+  .section-story p strong { color: var(--gold-pale); }
+  .story-highlight {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 7vw, 64px);
+    font-weight: 600; color: var(--gold);
+    line-height: 1;
+    display: block;
+    margin: 32px 0 8px;
+  }
+  .story-highlight-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold-light); opacity: 0.6;
+    margin-bottom: 32px; display: block;
+  }
+  .section-story .section-label { color: var(--gold-light); opacity: 0.6; }
+
+  /* ─── CONTENU GUIDE ─── */
+  .section-content { background: var(--cream); }
+  .chapters {
+    display: flex; flex-direction: column;
+    gap: 1px; margin-top: 40px;
+    border: 1px solid rgba(200,146,42,0.2);
+  }
+  .chapter {
+    display: flex; align-items: flex-start; gap: 24px;
+    padding: 28px 32px;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(200,146,42,0.12);
+    transition: background 0.25s;
+  }
+  .chapter:last-child { border-bottom: none; }
+  .chapter:hover { background: var(--cream-dark); }
+  .chapter-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 300;
+    color: var(--gold); opacity: 0.5;
+    min-width: 40px; line-height: 1;
+    margin-top: 2px;
+  }
+  .chapter-body {}
+  .chapter-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 500;
+    color: var(--brown-deep); margin-bottom: 6px; line-height: 1.3;
+  }
+  .chapter-desc {
+    font-size: 13px; color: var(--text-light);
+    line-height: 1.7; margin: 0;
+  }
+
+  /* ─── INVESTISSEMENT ─── */
+  .section-invest { background: var(--cream-dark); }
+  .price-card {
+    border: 1px solid rgba(200,146,42,0.35);
+    padding: 48px 40px;
+    text-align: center;
+    background: var(--cream);
+    position: relative;
+    margin-top: 40px;
+  }
+  .price-card::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 60px; height: 1px;
+    background: var(--gold);
+  }
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px; font-weight: 500;
+    color: var(--brown-deep); line-height: 1;
+    margin-bottom: 4px;
+  }
+  .price-amount sup { font-size: 32px; vertical-align: super; }
+  .price-once {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 32px; display: block;
+  }
+  .price-comparison {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-style: italic;
+    color: var(--text-light); line-height: 1.6;
+    max-width: 420px; margin: 0 auto 40px;
+  }
+
+  /* ─── CTA FINAL ─── */
+  .section-cta {
+    background: var(--brown-deep);
+    text-align: center;
+    padding: 100px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .section-cta::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 100%, rgba(200,146,42,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .section-cta h2 { color: var(--gold-pale); margin-bottom: 16px; }
+  .section-cta .cta-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-style: italic;
+    color: var(--gold-light); opacity: 0.75;
+    margin-bottom: 48px;
+  }
+  .cta-note {
+    margin-top: 20px;
+    font-size: 11px; letter-spacing: 1px;
+    color: rgba(240,216,152,0.45);
+    font-family: 'Montserrat', sans-serif;
+  }
+  .cta-final-whisper {
+    margin-top: 60px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px; font-style: italic;
+    color: rgba(240,216,152,0.45);
+    max-width: 500px; margin-left: auto; margin-right: auto;
+    line-height: 1.7;
+  }
+
+  /* ─── BANNER ACCOMPAGNEMENT ─── */
+  .section-accompagnement {
+    background: var(--cream-dark);
+    padding: 64px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(200,146,42,0.2);
+  }
+  .accomp-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px; display: block;
+  }
+  .accomp-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 4vw, 36px); font-weight: 500;
+    color: var(--brown-deep); margin-bottom: 12px;
+  }
+  .accomp-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-style: italic;
+    color: var(--text-light); margin-bottom: 32px;
+    max-width: 500px; margin-left: auto; margin-right: auto;
+    line-height: 1.6;
+  }
+  .btn-secondary {
+    display: inline-block;
+    border: 1px solid rgba(200,146,42,0.5);
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; font-weight: 500; letter-spacing: 2.5px;
+    text-transform: uppercase; text-decoration: none;
+    padding: 14px 40px;
+    transition: all 0.3s ease;
+  }
+  .btn-secondary:hover {
+    background: rgba(200,146,42,0.08);
+    border-color: var(--gold);
+    transform: translateY(-1px);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--brown-deep);
+    padding: 32px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(200,146,42,0.15);
+  }
+  footer p {
+    font-size: 11px; color: rgba(224,185,106,0.35);
+    letter-spacing: 0.5px; margin: 0;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1; transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 600px) {
+    section { padding: 60px 20px; }
+    .chapter { padding: 20px 20px; gap: 16px; }
+    .price-card { padding: 40px 24px; }
+    .price-amount { font-size: 56px; }
+    nav { padding: 14px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img src="logo.png" alt="Golden" class="nav-logo">
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow reveal">The Golden Method</p>
+  <h1 class="hero-title reveal">Comment j'ai doublé<br>mon chiffre d'affaires<br>en 90 jours</h1>
+  <p class="hero-subtitle reveal">Le guide complet pour Makeup Artists Indépendantes</p>
+
+  <img src="mockup.png" alt="The Golden Method — Guide Makeup Artists" class="hero-mockup reveal">
+
+  <div class="hero-cta-wrap reveal">
+    <a href="https://goldenmakeup.gumroad.com/l/plxjvw" target="_blank" class="btn-primary">
+      Je veux ce guide — 27€
+    </a>
+    <p class="hero-price">Accès immédiat · Téléchargement instantané · À toi pour toujours</p>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section-problem">
+  <div class="container">
+    <span class="section-label reveal">Le constat</span>
+    <p class="problem-statement reveal">Arrête de croire que tu n'es pas assez bonne.<br>Le problème, c'est pas ton talent.</p>
+    <p class="reveal">C'est que tu ne sais pas encore <strong>comment le rentabiliser.</strong></p>
+    <p class="reveal">Soit le téléphone ne sonne pas assez. Soit tu travailles beaucoup… pour gagner trop peu.</p>
+    <p class="reveal">Les deux ont la même cause. Et <strong>la même solution.</strong></p>
+  </div>
+</section>
+
+<!-- MIRROR -->
+<section>
+  <div class="container">
+    <span class="section-label reveal">Tu te reconnais ?</span>
+    <h2 class="reveal">Tu postes. Tu réponds. Tu crées.<br>Et tu attends.</h2>
+    <ul class="pain-list">
+      <li class="reveal">Tu gardes des prix bas parce que t'as peur de perdre la cliente.</li>
+      <li class="reveal">Tu fais des trajets épuisants pour 70€.</li>
+      <li class="reveal">Tu acceptes des conditions qui ne te conviennent pas.</li>
+      <li class="reveal">Tu te dis : <em>"c'est toujours mieux que rien."</em></li>
+    </ul>
+    <p class="mirror-question reveal">"Est-ce que c'est vraiment possible<br>d'en vivre, de ce métier ?"</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section-story">
+  <div class="container">
+    <span class="section-label reveal">Mon histoire</span>
+    <h2 class="reveal">Moi aussi j'ai vécu ça.</h2>
+    <p class="reveal">Un samedi soir. Des heures de route. 4 villes différentes. J'avais tout donné. Le lundi matin j'ouvre mon application bancaire.</p>
+    <span class="story-highlight reveal">20€.</span>
+    <span class="story-highlight-label reveal">C'est ce que ce week-end m'avait rapporté</span>
+    <p class="reveal">Ce jour-là j'ai compris quelque chose. Ce n'était pas mon talent le problème. Ce n'était pas mon travail. <strong>C'était mon système.</strong> Ou plutôt — je n'en avais pas.</p>
+    <p class="reveal">Pas de positionnement clair. Pas de prix qui reflètent ma valeur. Pas d'expérience client qui justifie ces prix. Pas de stratégie pour attirer les bonnes clientes.</p>
+    <p class="reveal"><strong>Le talent sans système, ça reste une passion. Pas un business.</strong></p>
+    <p class="reveal">Alors j'ai tout reconstruit. Étape par étape. Et j'ai tout mis dans ce guide — tout ce que j'aurais aimé avoir à mes débuts.</p>
+  </div>
+</section>
+
+<!-- CONTENU -->
+<section class="section-content">
+  <div class="container">
+    <span class="section-label reveal">Ce que contient le guide</span>
+    <h2 class="reveal">20+ stratégies.<br>Un plan d'action concret.</h2>
+    <div class="chapters">
+      <div class="chapter reveal">
+        <span class="chapter-num">I</span>
+        <div class="chapter-body">
+          <p class="chapter-title">Pourquoi tes prix te trahissent</p>
+          <p class="chapter-desc">Le calcul que personne n'ose faire. Ton vrai taux horaire. Le chiffre qui change tout.</p>
+        </div>
+      </div>
+      <div class="chapter reveal">
+        <span class="chapter-num">II</span>
+        <div class="chapter-body">
+          <p class="chapter-title">Construire une identité qui attire les bonnes clientes</p>
+          <p class="chapter-desc">Celles qui te ressemblent. Celles qui ne négocient pas. Celles qui veulent <em>toi</em>, spécifiquement.</p>
+        </div>
+      </div>
+      <div class="chapter reveal">
+        <span class="chapter-num">III</span>
+        <div class="chapter-body">
+          <p class="chapter-title">Le secret pour augmenter ta valeur perçue</p>
+          <p class="chapter-desc">Ce n'est pas ton pinceau qui définit ton prix.</p>
+        </div>
+      </div>
+      <div class="chapter reveal">
+        <span class="chapter-num">IV</span>
+        <div class="chapter-body">
+          <p class="chapter-title">La stratégie que personne n'utilise</p>
+          <p class="chapter-desc">Celle qui transforme un simple visiteur en cliente fidèle qui te recommande à toutes ses amies.</p>
+        </div>
+      </div>
+      <div class="chapter reveal">
+        <span class="chapter-num">V</span>
+        <div class="chapter-body">
+          <p class="chapter-title">Comment ne plus jamais subir les mois creux</p>
+          <p class="chapter-desc">Parce qu'une vraie entrepreneuse n'attend pas la saison. Elle la crée.</p>
+        </div>
+      </div>
+      <div class="chapter reveal">
+        <span class="chapter-num">VI</span>
+        <div class="chapter-body">
+          <p class="chapter-title">Le plan 90 jours</p>
+          <p class="chapter-desc">Étape par étape. Pour passer de maquilleuse qui attend à entrepreneuse qui maîtrise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTISSEMENT -->
+<section class="section-invest">
+  <div class="container">
+    <span class="section-label reveal">L'investissement</span>
+    <h2 class="reveal">Le prix d'un rouge à lèvres<br>qui peut tout changer.</h2>
+    <div class="price-card reveal">
+      <div class="price-amount"><sup>€</sup>27</div>
+      <span class="price-once">Une seule fois · À toi pour toujours</span>
+      <p class="price-comparison">C'est le prix d'un rouge à lèvres MAC que tu vas utiliser 3 fois et oublier au fond de ta mallette.<br><br>Sauf qu'une seule cliente attirée grâce à ce que tu vas apprendre ici — c'est déjà 10 fois ce que tu as investi.</p>
+      <a href="https://goldenmakeup.gumroad.com/l/plxjvw" target="_blank" class="btn-primary">
+        Je télécharge le guide maintenant
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section-cta">
+  <div class="container">
+    <span class="section-label reveal" style="color: var(--gold-light); opacity: 0.6;">Le point de départ</span>
+    <h2 class="reveal">Tu en as assez d'attendre<br>que ça décolle.</h2>
+    <p class="cta-sub reveal">Tu sais que tu vaux plus que ce que tu gagnes aujourd'hui.</p>
+    <a href="https://goldenmakeup.gumroad.com/l/plxjvw" target="_blank" class="btn-primary reveal">
+      Je suis prête à changer mon activité
+    </a>
+    <p class="cta-note reveal">Accès immédiat après paiement · Téléchargement instantané · 27€</p>
+    <p class="cta-final-whisper reveal">Si tu es encore là à lire — tu sais déjà que quelque chose doit changer.</p>
+  </div>
+</section>
+
+<!-- ACCOMPAGNEMENT -->
+<section class="section-accompagnement">
+  <span class="accomp-label reveal">Pour aller plus loin</span>
+  <h3 class="accomp-title reveal">The Golden Method — Accompagnement 6 mois</h3>
+  <p class="accomp-sub reveal">Tu veux qu'on construise ton business ensemble, étape par étape, avec un suivi personnalisé ?</p>
+  <a href="accompagnement.html" class="btn-secondary reveal">Découvrir l'accompagnement →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Golden Makeup · Tous droits réservés</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
